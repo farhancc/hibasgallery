@@ -1,0 +1,151 @@
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .content {
+  /* display: none; */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+.banner .content h1 {
+  font-family: "ICA Rubrik";
+  font-size: 16em;
+  line-height: 1em;
+  color: #25283b;
+  position: relative;
+}
+.banner .content h1::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 2px #d2d2d2;
+  color: transparent;
+}
+.banner .content .author {
+  font-family: Poppins;
+  text-align: right;
+  max-width: 200px;
+}
+.banner .content h2 {
+  font-size: 3em;
+}
+.banner .content .model {
+  background-image: url(img/model2.png);
+  width: 130%;
+  height: 130vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: auto 140%;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+  background-position: top center;
+  z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+  .banner .content h1 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 10px 20px #000;
+    font-size: 7em;
+  }
+  .banner .content .author {
+    color: #fff;
+    padding: 20px;
+    text-shadow: 0 10px 20px #000;
+    z-index: 2;
+    max-width: unset;
+    width: 100%;
+    text-align: center;
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner .content h1 {
+    font-size: 5em;
+  }
+}
+
+.slider {
+  margin-top: 10px;
+  width: var(--width); /* Define width for vertical slider */
+  height: 100%; /* Full height of the container */
+  overflow: hidden;
+  position: relative;
+}
+
+.slider .list {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  width: 100%;
+  height: calc(var(--height) * var(--quantity)); /* Adjust based on items */
+  position: absolute;
+  top: 0; /* Start at the top */
+}
+
+.slider .list .item {
+  width: 100%; /* Full width of the container */
+  height: var(--height); /* Dynamic height for each item */
+  position: absolute;
+  top: 100%; /* Start offscreen at the bottom */
+  animation: autoRun 10s linear infinite; /* Default animation */
+  animation-delay: calc(
+    (10s / var(--quantity)) * (var(--position) - 1) - 10s
+  ) !important; /* Delay for staggered effect */
+  transition: filter 0.5s;
+}
+
+.slider .list .item img {
+  width: 80%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes autoRun {
+  from {
+    top: 100%; /* Start from below the container */
+  }
+  to {
+    top: calc(var(--height) * -1); /* Move to above the container */
+  }
+}
+
+.slider:hover .item {
+  animation-play-state: paused !important; /* Pause animation on hover */
+  filter: grayscale(1); /* Keep grayscale on pause */
+}
+
+.slider .item:hover {
+  filter: grayscale(0); /* Remove grayscale on hover */
+}
+
+.slider[reverse="true"] .item {
+  animation: reversePlay 10s linear infinite; /* Reverse animation */
+}
+
+@keyframes reversePlay {
+  from {
+    top: calc(var(--height) * -1); /* Start above the container */
+  }
+  to {
+    top: 100%; /* Move below the container */
+  }
+}

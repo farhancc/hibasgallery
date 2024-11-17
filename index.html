@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hibamol's gallery</title>
+    <link rel="icon" type="image/x-icon" href="/img/model2.png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #d2d2d2;
+        background-image: repeating-linear-gradient(
+            to right,
+            transparent 0 100px,
+            #25283b22 100px 101px
+          ),
+          repeating-linear-gradient(
+            to bottom,
+            transparent 0 100px,
+            #25283b22 100px 101px
+          );
+      }
+
+      body::before {
+        position: absolute;
+        width: min(1400px, 90vw);
+        top: 10%;
+        left: 50%;
+        height: 90%;
+        transform: translateX(-50%);
+        content: "";
+        background-image: url(img/bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        pointer-events: none;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <div
+        class="slider"
+        reverse="true"
+        style="--width: 200px; --height: 200px; --quantity: 9"
+      >
+        <div class="list">
+          <div class="item" style="--position: 1">
+            <img src="img/dragon1.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 2">
+            <img src="img/dragon2.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 3">
+            <img src="img/dragon3.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 4">
+            <img src="img/dragon4.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 5">
+            <img src="img/dragon5.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 6">
+            <img src="img/dragon6.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 7">
+            <img src="img/dragon7.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 8">
+            <img src="img/dragon8.jpg" alt="" />
+          </div>
+          <div class="item" style="--position: 9">
+            <img src="img/dragon9.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h1 data-content="Hiba Fathima">Hiba Fathima</h1>
+        <div class="author">
+          <h2>ツ</h2>
+          <p><b>I'm a princess 👑</b></p>
+          <p>
+            but you don’t know me because I don’t need Disney to tell my story.
+            💅✨
+          </p>
+        </div>
+        <div class="model"></div>
+      </div>
+    </div>
+  </body>
+</html>
