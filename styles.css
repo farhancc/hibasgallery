@@ -50,7 +50,7 @@
 .banner .content .model {
   background-image: url(img/model2.png);
   width: 130%;
-  height: 160vh;
+  height: 130vh;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -80,10 +80,10 @@
 }
 @media screen and (max-width: 767px) {
   .banner .content h1 {
-    font-size: 5em;
+    font-size: 4em;
   }
   .banner .content {
-    padding-bottom: 1px;
+    padding-bottom: 20px;
   }
 }
 
