@@ -89,42 +89,45 @@
 
 .slider {
   margin-top: 10px;
-  width: var(--width); /* Define width for vertical slider */
+  width: var(--width); /* Define the width of the slider */
   height: 100%; /* Full height of the container */
   overflow: hidden;
-  position: relative;
+  position: absolute; /* Position relative to parent */
+  right: 0; /* Align the slider to the right */
+  top: 0; /* Start from the top */
 }
 
 .slider .list {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   width: 100%;
-  height: calc(var(--height) * var(--quantity)); /* Adjust based on items */
+  height: calc(var(--height) * var(--quantity)); /* Height depends on items */
   position: absolute;
   top: 0; /* Start at the top */
 }
 
 .slider .list .item {
-  width: 100%; /* Full width of the container */
-  height: var(--height); /* Dynamic height for each item */
+  width: 100%; /* Full width of the slider */
+  height: var(--height); /* Set height of each item */
   position: absolute;
   top: 100%; /* Start offscreen at the bottom */
-  animation: autoRun 10s linear infinite; /* Default animation */
+  animation: autoRun 10s linear infinite; /* Vertical scrolling animation */
   animation-delay: calc(
     (10s / var(--quantity)) * (var(--position) - 1) - 10s
-  ) !important; /* Delay for staggered effect */
+  ) !important; /* Delay to stagger items */
   transition: filter 0.5s;
 }
 
 .slider .list .item img {
-  width: 80%;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 20px;
 }
 
 @keyframes autoRun {
   from {
-    top: 100%; /* Start from below the container */
+    top: 100%; /* Start below the container */
   }
   to {
     top: calc(var(--height) * -1); /* Move to above the container */
