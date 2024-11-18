@@ -78,17 +78,6 @@
     padding: 0 30px;
   }
 }
-@media screen and (max-width: 767px) {
-  .banner .content h1 {
-    font-size: 4em;
-  }
-  .banner .content {
-    padding-bottom: 20px;
-  }
-  .slider {
-    z-index: 1;
-  }
-}
 
 .slider {
   margin-top: 10px;
@@ -99,6 +88,17 @@
   right: 0; /* Align the slider to the right */
   top: 0; /* Start from the top */
   z-index: 99;
+}
+@media screen and (max-width: 767px) {
+  .banner .content h1 {
+    font-size: 4em;
+  }
+  .banner .content {
+    padding-bottom: 20px;
+  }
+  .slider {
+    z-index: 1;
+  }
 }
 
 .slider .list {
