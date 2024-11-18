@@ -85,6 +85,9 @@
   .banner .content {
     padding-bottom: 20px;
   }
+  .slider {
+    z-index: 1;
+  }
 }
 
 .slider {
